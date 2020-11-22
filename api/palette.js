@@ -8,7 +8,7 @@ var cheerio = require('cheerio');
 
 //app.addHeader("Access-Control-Allow-Origin", "*");
 module.exports = function (req, res) {
-	res.header('Access-Control-Allow-Origin', '*');
+	// res.header('Access-Control-Allow-Origin', '*');
 	
 	//
 	// Because I couldn't find a good source for colorpalette ids on colorhunt,
