@@ -38,7 +38,7 @@ module.exports = function (req, res) {
 					c3: "",
 					c4: ""
 				};
-										
+				
 				var script = $('#jscode').next().html();
 				
 				// Finds our string of data on the page
@@ -46,7 +46,7 @@ module.exports = function (req, res) {
 				var itemerIndex = script.search("itemer");  
 				
 				if (itemerIndex === -1) {
-						console.log(url + "didn't work.");
+						console.log(url + " didn't work.");
 						url = Math.floor(Math.random() * 100000).toString();
 						getColorJson('http://colorhunt.co/c/' + url);
 						return;
@@ -81,3 +81,11 @@ module.exports = function (req, res) {
 	var url = Math.floor(Math.random() * 100000).toString();
 	getColorJson('http://colorhunt.co/c/' + url);
 };
+
+
+
+function getRandom() {
+	return new Promise(res => {
+		request('http://colorhunt.co/c/random')
+	});
+}
