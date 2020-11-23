@@ -87,7 +87,7 @@ module.exports = async function (req, res) {
 
 
 function getRandom() {
-	return new Promise(res => {
+	return new Promise(resolve => {
 		request({
 			url: 'http://colorhunt.co/hunt.php',
 			form: {
@@ -96,7 +96,7 @@ function getRandom() {
 				tags: ''
 			}
 		}, function(error, res, body) {
-			res(body);
+			resolve(body);
 		})
 	});
 }
